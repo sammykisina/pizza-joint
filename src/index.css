@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+@font-face {
+  font-family: "Quicksand";
+  src: url("./assets/fonts/Quicksand/static/Quicksand-Regular.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@layer base {
+  * {
+    font-family: "Quicksand";
+  }
+
+  body {
+    /* @apply bg-[#64007B]; */
+    background: rgb(100, 0, 123);
+    background: radial-gradient(
+      circle,
+      rgba(100, 0, 123, 1) 0%,
+      rgba(62, 20, 86, 1) 100%
+    );
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  button {
+    @apply text-white py-[10px] px-[30px] text-[1rem] bg-transparent rounded-[50px] border border-white opacity-[0.7];
+  }
+
+  .container {
+    @apply max-w-[300px] mt-[100px] mx-auto mb-[40px];
+  }
+
+  .container h3 {
+    @apply pb-[10px] mb-[10px] border-b border-[#ffffff4d];
+  }
+
+  .container li {
+    @apply p-[10px] cursor-pointer;
+  }
+
+  /* Header */
+  header {
+    @apply flex p-[40px] items-center;
+  }
+
+  header .title {
+    @apply flex-1 ml-[20px] text-[1.2rem] text-white;
+  }
+
+  header h1 {
+    @apply border-b border-[#ffffff4d];
+  }
+
+  header .pizza-svg {
+    @apply w-[80px] overflow-visible stroke-white stroke-[4];
+  }
+  header .pizza-svg {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  /* Lists */
+  li span.active {
+    @apply font-bold items-center;
+  }
+
+  li span.active::before {
+    @apply content-[">"] relative -top-[2px] mr-[6px] transform scale-[0.8] inline-block;
+  }
+
+  /* Pages */
+
+  .home.container,
+  .order.container {
+    @apply text-center max-w-[800px];
+  }
+
+  .home button {
+    @apply text-white pt-[15px] px-[30px] text-[1.6rem] border-[3px] border-white my-[30px] mx-[20px];
+  }
+
+  .order p {
+    @apply my-[20px] mx-auto;
+  }
+}
